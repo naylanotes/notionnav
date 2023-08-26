@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+  
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+	<!-- Google Font -->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+	<!-------->
+
+	<style>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+.navMenu {
+font-family: 'Advent Pro', sans-serif;
+padding: 8px;
+text-align: center;
+margin: 0px auto;
+width: fit-content;
+}
+
+.navMenu {
+list-style-type: none;
+margin: 0 auto ;
+padding: 0;
+overflow: hidden;
+max-width: 100vw; /* Base the width on the viewport width for responsiveness */
+max-height: 100vh; /* Base the height on the viewport height for responsiveness */
+width: 100%;
+}
+
+
+/* this is new update */
+body, html {
+margin: 0;
+padding: 0;
+overflow: hidden; /* Hide content that spills outside its box*/
+}
+
+
+
+
+
+		.navMenu a {
+    color: #FBF8F8;
+    font-size: 16px; /* Set the font size to 16px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0px;
+    border: 1.5px solid #000000; /* Add border to the text container */
+    text-shadow:
+-1px -1px 0 #000,
+1px -1px 0 #000,
+-1px 1px 0 #000,
+1px 1px 0 #000,
+0px -1px 0 #000,
+0px 1px 0 #000,
+-1px 0px 0 #000,
+1px 0px 0 #000,
+-1px -1px 0 #000,
+1px -1px 0 #000,
+-1px 1px 0 #000,
+1px 1px 0 #000,
+0px -1px 0 #000,
+0px 1px 0 #000,
+-1px 0px 0 #000,
+1px 0px 0 #000;
+}
+.navMenu a:hover {
+color: #d09c0b;
+}
+
+
+.navMenu a.menuLink {
+position: relative;
+margin-right: -30px;
+z-index: 1;
+box-sizing: border-box;
+width: 10.5%;
+height: 40px;
+float: left;
+background: #9A7C6F;
+border-radius: 7px;
+border: 0.005px black solid;
+padding: 10px;
+text-align: center;
+color: white;
+text-decoration: none;
+line-height: 45px;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: all 0.5s ease;
+box-shadow: 0px 10px 0px -3px rgba(0, 0, 0, 1), 0px 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+
+.navMenu a.menuLink:hover {
+z-index: 2;
+box-shadow: 3px 7px 7px 3px rgba(0, 0, 0, 5);
+transform: scale(1);
+}
+
+.navMenu a.menuLink.home {
+background: #DDD8D0;
+}
+
+.navMenu a.menuLink.inbox {
+background: #8F7E7E;
+}
+
+.navMenu a.menuLink.planner {
+background: #906F70;
+}
+
+.navMenu a.menuLink.projects {
+background: #a68b8c;
+}
+
+.navMenu a.menuLink.tasks {
+background: #675b5c;
+}
+
+.navMenu a.menuLink.business {
+background: #a68b8c;
+}
+
+.navMenu a.menuLink.knowledge {
+background: #906f70;
+}
+
+.navMenu a.menuLink.topics {
+background: #735859;
+}
+
+.navMenu a.menuLink.notes {
+background: #a3705b;
+}
+
+.navMenu a.menuLink.media {
+background: #825a49;
+}
+
+.navMenu a.menuLink.resourses {
+background: #906f70;
+}
+
+.navMenu a.menuLink.lifewiki {
+background: #564243;
+}
+
+.icon {
+margin-right: 12px;
+margin-bottom: 5px;
+}
+</style>
+</head>
+<body>
+
+<nav class="navMenu  border">
+<a id="home" onclick="navigate(this.id)" href="#" class="menuLink home"> <i class="fa-solid fa-house icon"></i> Home</a>
+<a id="inbox" onclick="navigate(this.id)" href="#" class="menuLink inbox">Index</a>
+<a id="week" onclick="navigate(this.id)" href="#" class="menuLink planner">Planner</a>
+<a id="projects" onclick="navigate(this.id)" href="#" class="menuLink projects">Projects</a>
+<a id="tasks" onclick="navigate(this.id)" href="#" class="menuLink tasks">Tasks</a>
+<a id="business" onclick="navigate(this.id)" href="#" class="menuLink business">Business</a>
+<a id="knowledge" onclick="navigate(this.id)" href="#" class="menuLink knowledge">Knowledge</a>
+<a id="topics" onclick="navigate(this.id)" href="#" class="menuLink topics">Topics</a>
+<a id="notes" onclick="navigate(this.id)" href="#" class="menuLink notes">Notes</a>
+<a id="media" onclick="navigate(this.id)" href="#" class="menuLink media">Media</a>
+<a id="resourses" onclick="navigate(this.id)" href="#" class="menuLink resourses">Resourses</a>
+<a id="lifewiki" onclick="navigate(this.id)" href="#" class="menuLink lifewiki">Lifewiki</a>
+</nav>
+</body>
+    
+
+    <script>
+
+let direction = "horizontal";
+if (direction === "vertical") {
+document.head.insertAdjacentHTML("beforeend", `
+<style>
+.navMenu {max-height: 100vh; overflow-y: hidden; width: 100%; text-align: left; margin: 20px auto 20px;}
+.navMenu a.menuLink {
+width: 10%;
+float: none;
+box-shadow: 3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+.navMenu a.menuLink:not(:first-child) {
+margin: -8px 0px;
+}
+* {
+box-sizing: border-box;
+}
+body, html {
+margin: 0;
+padding: 0;
+overflow: hidden; /* Hide content that spills outside its box*/
+}
+.navMenu {
+max-width: 100vw; /* Base the width on the viewport width for responsiveness */
+max-height: 100vh; /* Base the height on the viewport height for responsiveness */
+overflow-y: hidden;
+width: 100%;
+text-align: left;
+margin: 0 auto; /* Adjust to remove extra white space*/
+}
+</style>`)
+}		
+
+
+		function navigate(id) {
+
+			if (id == 'home')
+				window.open("https://example.com", '_blank').focus();
+			else if (id == "inbox")
+				window.open("https://example.com", '_blank').focus();
+			else if (id == "week")
+				window.open("https://example.com", '_blank').focus();
+			else if (id == "month")
+				window.open("https://example.com", '_blank').focus();
+			else if (id == "projects")
+				window.open("https://example.com", '_blank').focus();
+			else if (id == "business")
+				window.open("https://example.com", '_blank').focus();
+			else if (id == "tasks")
+				window.open("https://example.com", '_blank').focus();
+			else if (id == "knowledge")
+				window.open("https://example.com", '_blank').focus();
+			else if (id == "topics")
+				window.open("https://example.com", '_blank').focus();
+			else if (id == "notes")
+				window.open("https://example.com", '_blank').focus();
+			else if (id == "media")
+				window.open("https://example.com", '_blank').focus();
+			else if (id == "resourses")
+				window.open("https://example.com3", '_blank').focus();
+			else if (id == "lifewiki")
+				window.open("https://example.com", '_blank').focus();
+
+		}
+       
+    </script>
+</body>
+</html>
